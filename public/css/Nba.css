@@ -1,0 +1,79 @@
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;   
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.sub-button {
+    display: block;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    background-color: #f0f0f0; /* Color de fondo */
+    
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.sub-button:hover {
+    background-color: #e0e0e0; /* Cambio de color de fondo al pasar el ratón */
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+label {
+    width: 120px; /* Anchura fija para etiquetas */
+    margin-right: 1rem;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%; /* El campo de entrada ocupa todo el espacio restante */
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el ratón */
+}
