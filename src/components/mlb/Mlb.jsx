@@ -13,33 +13,19 @@ const Mlb = () => {
     const [auth, guardarAuth] = useContext(CRMContext);
 
     useEffect(() => {
-        if (auth.token !== '') {
-            const consultarAPI = async () => {
-                try {
-                    const consultaMlb = await clienteAxios.get('/api/mlb/listar', {
-                        headers: {
-                            Authorization: `Bearer ${auth.token}`
-                        }
-                    });
-                    setListamlb(consultaMlb.data.listar);
-                } catch (error) {
-                    console.log('Error en la API, no hay token o no ha iniciado sesión');
-                    guardarAuth({
-                        token: '',
-                        auth: false
-                    });
-                    navigate('/iniciar-sesion')
-                }
-            };
-            consultarAPI();
-        } else {
-            console.log('Hola')
-        }
-    }, [auth.token, guardarAuth, navigate]);
+        const consultarAPI = async () => {
+            try {
+                const consultaMlb = await clienteAxios.get('/api/mlb/listar');
+                setListamlb(consultaMlb.data.listar);
+            } catch (error) {
+                console.error('Error al consultar la API')
+            }
+        };
+        consultarAPI();
+        
+    }, []);
 
-    if (!auth.auth) {
-        navigate('/iniciar-sesion')
-    }
+    
 
     const eliminarBet = (id) => {
         Swal.fire({
@@ -57,17 +43,17 @@ const Mlb = () => {
                         Authorization: `Bearer ${auth.token}`
                     }
                 })
-                .then(res => {
-                    Swal.fire(
-                        'Borrado',
-                        'Tu Bet ha sido borrado',
-                        'success'
-                    );
-                    setListamlb(listaMlb.filter(item => item._id !== id)); // Actualiza la lista localmente
-                })
-                .catch(error => {
-                    console.error('Error al eliminar el bet:', error);
-                });
+                    .then(res => {
+                        Swal.fire(
+                            'Borrado',
+                            'Tu Bet ha sido borrado',
+                            'success'
+                        );
+                        setListamlb(listaMlb.filter(item => item._id !== id)); // Actualiza la lista localmente
+                    })
+                    .catch(error => {
+                        console.error('Error al eliminar el bet:', error);
+                    });
             }
         });
     };

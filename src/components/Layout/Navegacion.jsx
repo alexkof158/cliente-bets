@@ -14,6 +14,7 @@ const Navegacion = () => {
                 <Link to="/uefa"><i className="fa-solid fa-futbol"></i> Uefa Champions League</Link><hr />
             </nav>
         </aside>
+        
     );
 }
  

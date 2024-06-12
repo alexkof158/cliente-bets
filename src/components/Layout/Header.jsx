@@ -32,8 +32,8 @@ const Header = () => {
         <header className="barra">
             <div className="contenedor">
                 <div className="contenido-barra">
-                    <Link to={'/nba'}>
-                        <h1>CRM - Historial - Sports</h1>
+                    <Link to={'/LOGIN'}>
+                        <h1>LOGIN</h1>
                     </Link>
 
                     {auth.auth ? (

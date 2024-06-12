@@ -50,7 +50,7 @@ export const AppBet = () => {
               <Route path="/uefa/editar/:id" element={<EditarUefa />} />
 
               {/* Login */}
-              <Route path="/iniciar-sesion" element={<Login />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </main>
         </div>
